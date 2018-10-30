@@ -1,28 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import SearchBar from './components/search_bar';
+import YTSearch from 'youtube-api-search';
+import VideoList from './components/video_list';
+
+const API_KEY = 'AIzaSyCC3szf_4HtQRTmmFpom2rHHVIqoVa5mUY'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			videos: []
+		};
+
+    this.videoSearch('Sidemen');
+	}
+
+	videoSearch(term) {
+		YTSearch( {key: API_KEY, term: term}, (data) => {
+			this.setState( {
+        videos: data
+      });
+      // console.log(data);
+		});
+	}
+	
+	render() {
+		return (
+			<div>
+				<SearchBar />
+				<VideoList videos={this.state.videos} />
+			</div>
+    		);
+  	}
 }
 
 export default App;
