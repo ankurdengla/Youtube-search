@@ -6,7 +6,7 @@ A simple Youtube search utility that fetches results using Youtube-data-api-v3. 
 
 ### Video Demo
 A video demo can be viewed by clicking on the following -
-[Watch Demo](https://drive.google.com/file/d/1RsXvuQ5jVvIACnKdmKw7UyRJpBmJCMsZ/view?usp=sharing)
+[Watch Demo](https://youtu.be/6O9Zdxj28aE)
 
 ### Steps to run
  - Clone the repository.
