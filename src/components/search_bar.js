@@ -1,4 +1,5 @@
 import React from 'react';
+import {Input} from 'react-materialize'
 
 class SearchBar extends React.Component{
 	constructor(props) {
@@ -16,7 +17,12 @@ class SearchBar extends React.Component{
 	render() {
 		return (
 			<div className="search-bar" >
-				<input
+				<Input
+					s = {12}
+					id="item"
+					type="text"
+					className="validate"
+					placeholder="Enter item required"
 					value = {this.state.term}
 					onChange = {this.onInputChange}
 				/>

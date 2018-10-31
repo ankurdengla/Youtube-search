@@ -5,6 +5,7 @@ import YTSearch from 'youtube-api-search';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 import searchYoutube from 'youtube-api-v3-search';
+import { Row, Col, Navbar, Input } from 'react-materialize';
 
 const API_KEY = 'AIzaSyCC3szf_4HtQRTmmFpom2rHHVIqoVa5mUY'
 
@@ -14,8 +15,7 @@ class App extends Component {
 
 		this.state = {
 			videos: [],
-			selectedVideo : null,
-			sortby: ''
+			selectedVideo : null
 		};
 
 		this.videoSearch('');
@@ -33,7 +33,7 @@ class App extends Component {
 	}
 
 	sortResults(e) {
-		const videoList = this.state.videos
+		var videoList = this.state.videos
 		if (e.target.value == 'title') {
 				videoList.sort((a,b) => {
 				return a.snippet.title > b.snippet.title;
@@ -45,31 +45,35 @@ class App extends Component {
 			});
 		}
 		this.setState( {
-			sortby: e.target.value,
 			videos: videoList
 		});	
-		console.log(this.state.sortby);
-		console.log(this.state.videos);
+		// console.log(this.state.videos);
 	}
 	
 	render() {
 		return (
 			<div>
-				<SearchBar onSearchTermChange = {searchTerm => this.videoSearch(searchTerm)} />
-				<form>
-					<div className="sort-rules" >
-						<select value={this.state.sortby} onChange={this.sortResults}>
+				<Navbar brand='Youtube Search' className="grey darken-4" />	
+				<Row>
+					<SearchBar onSearchTermChange = {searchTerm => this.videoSearch(searchTerm)} />
+				</Row>
+				<Row>
+					<Col s={7}>
+						<VideoDetail video = {this.state.selectedVideo} />
+					</Col>
+					<Col s={4}>
+						<Input s={4} type="select" defaultValue="" id="sortBy" onChange={this.sortResults}>
+							<option value="" disabled>
+								Sort By
+							</option>
 							<option value="title">Name</option>
 							<option value="published">Published On</option>
-						</select>	
-					</div>
-					{/* <SortRules value={this.state.sortby} onChange={this.sortResults} /> */}
-					{/* <button type="button" onClick={this.sortResults}>abc</button> */}
-				</form>
-				<VideoDetail video = {this.state.selectedVideo} />
-				<VideoList
-					onVideoSelect = {userSelected => this.setState({selectedVideo: userSelected}) }
-					videos={this.state.videos} />
+						</Input>
+						<VideoList
+							onVideoSelect = {userSelected => this.setState({selectedVideo: userSelected}) }
+							videos={this.state.videos} />
+					</Col>
+				</Row>
 			</div>
     		);
   	}
