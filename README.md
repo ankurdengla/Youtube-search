@@ -4,9 +4,20 @@
 ### About
 A simple Youtube search utility that fetches results using Youtube-data-api-v3. The results obtained are sortable on the basis of title (lexicographically) and date published (from most recent to least).
 
+### Video Demo
+A video demo can be viewed by clicking on the following -
+[Watch Demo](https://drive.google.com/file/d/1RsXvuQ5jVvIACnKdmKw7UyRJpBmJCMsZ/view?usp=sharing)
+
 ### Steps to run
  - Clone the repository.
  - Go to the directory.
  - Run "npm install" (without the quotes) to install the dependencies.
  - Run "npm start"
  - Go to "localhost:3000" on your browser.
+ 
+### Under the hood
+ - Built using [React](https://reactjs.org/)
+ - [React-materialize](https://react-materialize.github.io/#/) for the UI
+ 
+ ### Creators
+ - [Ankur Dengla](https://github.com/ankurdengla1996)
