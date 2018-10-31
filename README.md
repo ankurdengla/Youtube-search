@@ -9,7 +9,9 @@ A video demo can be viewed by clicking on the following -
 [Watch Demo](https://youtu.be/6O9Zdxj28aE)
 
 ### Steps to run
- - Clone the repository.
+ - Install create-react-app by typing "npm install create-reaact-app".
+ - Create a new app by typing "create-react-app Youtube-search".
+ - Clone the repository in that directory.
  - Go to the directory.
  - Run "npm install" (without the quotes) to install the dependencies.
  - Run "npm start"
