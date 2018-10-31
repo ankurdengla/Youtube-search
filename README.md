@@ -1,4 +1,4 @@
-# Youtube Search   &middot;   ![](https://img.shields.io/github/license/mashape/apistatus.svg) ![](https://img.shields.io/npm/v/npm.svg) ![](https://img.shields.io/node/v/@stdlib/stdlib/latest.svg?registry_uri=https%3A%2F%2Fregistry.npmjs.com)
+# Youtube Search   &middot;   ![](https://img.shields.io/npm/v/npm.svg) ![](https://img.shields.io/node/v/@stdlib/stdlib/latest.svg?registry_uri=https%3A%2F%2Fregistry.npmjs.com)
 ## Community-driven purchase and delivery, and carpool app created during Headout presents Prototype 2018 hackathon
 
 ### About
