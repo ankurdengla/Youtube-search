@@ -1,6 +1,11 @@
 import React from 'react';
 import {Row, Col, MediaBox} from 'react-materialize';
 
+const player = {
+	height: "55vh",
+	width: "100%",
+};
+
 const VideoDetail = (props) => {
 	const video = props.video;
 
@@ -14,11 +19,15 @@ const VideoDetail = (props) => {
 	return (
 		<div className = "video-detail">
 			<Row>
-				<iframe src={url}></iframe>
+				<Col s={12}>
+					<iframe src={url} style={player}></iframe>
+				</Col>
 			</Row>
 			<Row>
-				<div>{video.snippet.title}</div>
-				<div>{video.snippet.description}</div>
+				<Col>
+					<div>{video.snippet.title}</div>
+					<div>{video.snippet.description}</div>
+				</Col>
 			</Row>
 		</div>
 	);
