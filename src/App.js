@@ -7,9 +7,13 @@ import VideoDetail from './components/video_detail';
 import searchYoutube from 'youtube-api-v3-search';
 import { Row, Col, Navbar, Input } from 'react-materialize';
 
+const Row1 = {
+	height: "54vh"
+}
+
 const scroll = {
 	overflowY: "scroll",
-	height: "55vh"
+	height: "100%"
 }
 
 const API_KEY = 'AIzaSyCC3szf_4HtQRTmmFpom2rHHVIqoVa5mUY'
@@ -28,8 +32,8 @@ class App extends Component {
 	}
 
 	videoSearch(searchTerm) {
-		YTSearch( {key: API_KEY, term: searchTerm, max: 10}, (data) => {
-			console.log(data);
+		YTSearch( {key: API_KEY, term: searchTerm }, (data) => {
+			// console.log(data);
 			this.setState( {
 				videos: data,
 				selectedVideo: data[0]
@@ -46,7 +50,7 @@ class App extends Component {
 		}
 		if (e.target.value == 'published') {
 			videoList.sort((a,b) => {
-				return a.snippet.publishedAt > b.snippet.publishedAt;
+				return a.snippet.publishedAt < b.snippet.publishedAt;
 			});
 		}
 		this.setState( {
@@ -76,7 +80,7 @@ class App extends Component {
 								<option value="published">Published On</option>
 							</Input>
 						</Row>
-						<Row>
+						<Row style={Row1}>
 						<div style={scroll}>
 							<VideoList
 								onVideoSelect = {userSelected => this.setState({selectedVideo: userSelected}) }
