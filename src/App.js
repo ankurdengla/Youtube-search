@@ -62,7 +62,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="blue-grey lighten-5">
-				{/* <Navbar brand=' Youtube Search' className="grey darken-4" />	 */}
+				<Navbar brand=' Youtube Search' className="grey darken-4" />	
 				<Row>
 					<SearchBar onSearchTermChange = {searchTerm => this.videoSearch(searchTerm)} />
 				</Row>
