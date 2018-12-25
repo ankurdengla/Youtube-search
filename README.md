@@ -1,4 +1,4 @@
-# Youtube Search   &middot;   ![](https://img.shields.io/npm/v/npm.svg) ![](https://img.shields.io/node/v/@stdlib/stdlib/latest.svg?registry_uri=https%3A%2F%2Fregistry.npmjs.com)
+# Youtube Search   &middot; [![Inline docs](http://inch-ci.org/github/ankurdengla1996/Youtube-search.svg?branch=master)](http://inch-ci.org/github/ankurdengla1996/Youtube-search)   ![](https://img.shields.io/npm/v/npm.svg) ![](https://img.shields.io/node/v/@stdlib/stdlib/latest.svg?registry_uri=https%3A%2F%2Fregistry.npmjs.com)
 ## A Youtube search utility that sorts the results client-side
 
 ### About
